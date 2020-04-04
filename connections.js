@@ -248,69 +248,53 @@ function addRole() {
 
 
 
-// function viewByDpt() {
+function viewByDpt() {
 
 
-//     const qrydepatment = "SELECT *FROM department"
-//     const employeeQuery = "SELECT *FROM employee"
-//     connection.query(qrydepatment, function (err, department) {
-//         connection.query(employeeQuery, function (err, employee) {
+    const qrydepatment = "SELECT *FROM department"
+    const employeeQuery = "SELECT *FROM employee"
+    connection.query(qrydepatment, function (err, department) {
+        connection.query(employeeQuery, function (err, employee) {
 
-//             if (err) throw err
+            if (err) throw err
 
-//             inquirer.prompt([
+            inquirer.prompt([
 
-//                 {
-//                     name: "choices",
-//                     type: "list",
-//                     message: "Which department would like to get results from?",
-//                     choices: function () {
-//                         var arrayOfChoices = [];
-//                         for (var i = 0; i < department.length; i++) {
-//                             arrayOfChoices.push(department[i].name);
-//                         }
-//                         return arrayOfChoices;
-//                     },
-//                 }
-//             ]).then(function (res) {
+                {
+                    name: "choices",
+                    type: "list",
+                    message: "Which department would like to get results from?",
+                    choices: function () {
+                        var arrayOfChoices = [];
+                        for (var i = 0; i < department.length; i++) {
+                            arrayOfChoices.push(department[i].name);
+                        }
+                        return arrayOfChoices;
+                    },
+                }
+            ]).then(function (res) {
 
-//                 // for (var i = 0; i < employee.length; i++) {
-//                 //     if (employee[i].role_id === res.results) {
-//                 //         res.department_id = results[i].id;
-//                 //     }
+                // for (var i = 0; i < employee.length; i++) {
+                //     if (employee[i].role_id === res.results) {
+                //         res.department_id = results[i].id;
+                //     }
 
-//                 const query = "SELECT employee.first_name AS FirstName, employee.last_name fROM employee WHERE?"
-//                 var values = { name: res.choices }
-//                 console.log(values)
-//                 var query2 = connection.query(query, values, function (err, results) {
-
-
-//                     console.table(results)
-//                     console.log(query2 + "----------------------")
-//                     if (err) throw err
-//                 })
+                const query = "SELECT employee.first_name AS FirstName, employee.last_name fROM employee WHERE?"
+                var values = { name: res.choices }
+                console.log(values)
+                var query2 = connection.query(query, values, function (err, results) {
 
 
-//             })
-//         })
-//     })
-// }
+                    console.table(results)
+                    console.log(query2 + "----------------------")
+                    if (err) throw err
+                })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            })
+        })
+    })
+}
 
 
 function updateRole() {

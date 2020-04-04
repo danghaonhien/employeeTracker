@@ -39,7 +39,7 @@ VALUES ("Sales Lead", 60000 ,1),
 ("Accountant",75000,4),
 ("Salesperson", 30000 ,1),
 ("Lead Engineer", 95000,2),
-("Legal Team Lead", 90000, 3),
+("Legal Team Lead", 90000, 3);
 
 
 
